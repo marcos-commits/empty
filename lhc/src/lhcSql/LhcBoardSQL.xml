@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lhcBoard">
+
+	<select id="countAll" resultType="int">
+		select count(*) from lhcboard
+	</select>
+	
+	<select id="selectAll" parameterType="hashmap" resultType="LhcBoardVO">
+		<![CDATA[]]>
+	</select>
+	
+	<select id="maxNum" resultType="String">
+		select max(lhc_num) from lhcboard
+	</select>
+	
+	<delete id="deleteArticle" parameterType="int">
+		delete from lhcBoard where lhc_num=#{lhc_num}
+	</delete>
+</mapper>

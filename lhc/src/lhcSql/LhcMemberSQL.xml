@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lhcMember">
+
+	<select id="selectMember" parameterType="lhcMemberVO" resultType="lhcMemberVO">
+		select * from lhcmember where lhc_id=#{lhc_id}
+	</select>
+
+	<update id="updateMember" parameterType="lhcMemberVO">
+		update lhcmember set lhc_pw=#{lhc_pw}, lhc_phone=#{lhc_phone}, lhc_addr=#{lhc_addr} where lhc_id=#{lhc_id}
+	</update>
+	
+	<delete id="deleteMember" parameterType="hashmap">
+		delete from lhcmember where lhc_id=#{id} and lhc_pw=#{pw}
+	</delete>
+	
+	
+
+</mapper>
